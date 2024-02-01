@@ -9,7 +9,6 @@ namespace Domain.Entities;
 
 public class Brand:Entity<Guid>
 {
-    public Guid Id { get; set; }//common(ortak)
     public string Name { get; set; }
     public Brand()
     {

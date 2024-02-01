@@ -17,5 +17,10 @@ public static class ApplicationServiceRegistration
             configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
         });
         return services;
+
+        /* 
+            Bütün assembly'i tara, orada command'leri ve query'leri bul.
+            onları birbiriyle eşleştirip listene koy.
+        */
     }
 }
