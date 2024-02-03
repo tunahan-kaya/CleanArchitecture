@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.Repositories;
 
-public interface IBrandRepository:IAsyncRepository<Brand,Guid> //,IRepository<Brand,Guid>   :senkron repository
+public interface IBrandRepository:IAsyncRepository<Brand,Guid> //,IRepository<Brand,Guid>   //:senkron repository
 {
 
 }
