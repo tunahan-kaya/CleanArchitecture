@@ -16,7 +16,15 @@ public static class PersistanceServiceRegistration
 {
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
+        //InMemory
+        //services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
+
+        // "RentACar" isimli connectionstring'i kullan
+            // (ConnectionString'i WebApi'de appsettings.json dosyasında belirledik)
+        services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(
+            configuration.GetConnectionString("RentACar")));
+
+
         services.AddScoped<IBrandRepository, BrandRepository>();
         return services;
     }
